@@ -1,10 +1,13 @@
 var express = require('express');
+var auth    = require('/src/authentication');
 var bodyParser = require('body-parser');
 
 var app = express();
 var jsonParser = bodyParser.json();
 
 app.get('/', function(req, res) {
+    
+    auth.getUrl();
     res.send('Hello World!');
 });
 
